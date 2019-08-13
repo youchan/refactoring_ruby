@@ -2,5 +2,4 @@
 
 managers = employees.select {|e| e.manager?}
 
-offices = []
-employees.each {|e| offices << e.office}
+offices = employees.collect {|e| e.office}
