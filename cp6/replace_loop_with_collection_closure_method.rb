@@ -6,5 +6,4 @@ offices = employees.collect {|e| e.office}
 
 manager_offices = employees.select(&:manager?).collect(&:office)
 
-total = 0
-employees.each {|e| total += e.salary}
+total = employees.inject(0) {|sum, e| sum + e.salary}
