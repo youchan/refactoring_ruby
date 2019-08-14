@@ -10,6 +10,12 @@ class Books
     end
     sql << "WHERE #{conditions}" unless conditions.empty?
     sql << 'LIMIT 1' if selector == :first
+
     connection.find(sql.join(' '))
   end
 end
+
+Books.find(:all)
+Books.find(:all, "title like '%Voodoo Economics'")
+Books.find(:all, "authors.name = 'Jenny James'", :authors)
+Books.find(:first, "authors.name = 'Jenny James'", :authors)
