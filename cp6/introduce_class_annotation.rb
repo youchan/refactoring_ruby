@@ -1,9 +1,7 @@
 # 6.13 クラスアノテーションの導入（Introduce Class Annotation）
 
 class SearchCriteria
-  def initialize(hash)
-    @author_id = hash[:author_id]
-    @publisher_id = hash[:publisher_id]
-    @isbn = hash[:isbn]
-  end
+  hash_initializer :author_id, :publisher_id, :isbn
 end
+
+# ↑こう変えられると嬉しい
