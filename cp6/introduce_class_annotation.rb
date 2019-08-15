@@ -1,6 +1,6 @@
 # 6.13 クラスアノテーションの導入（Introduce Class Annotation）
 
-class SearchCriteria
+module CustomInitializers
   def self.hash_initializer(*attribute_names)
     define_method(:initialize) do |*args|
       data = args.first || {}
@@ -9,6 +9,11 @@ class SearchCriteria
       end
     end
   end
+end
 
+Class.send :include, CustomInitializers
+
+
+class SearchCriteria
   hash_initializer :author_id, :publisher_id, :isbn
 end
