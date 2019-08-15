@@ -1,3 +1,5 @@
+# 6.1 メソッド抽出（Extract Method）
+
 def print_owing(previous_amount)
   print_banner
   outstanding = calculate_outstanding(outstanding * 1.2)

@@ -1,3 +1,5 @@
+# 6.5 一時変数からチェインへ
+
 class Select
   def self.with_option(option)
     select = self.new

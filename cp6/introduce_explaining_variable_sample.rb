@@ -1,3 +1,5 @@
+# 6.6 説明用変数の導入(EXAMPLE)
+
 def price
   # price is base price - quantity discount + shipping
   base_price = @quantity * @item_price

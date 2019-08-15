@@ -1,3 +1,5 @@
+# 6.14 名前付き引数の導入（Introduce Named Parameter）
+
 # SQL構築コード
 # NOTE: assert_valid_keys は active_support のメソッドとして実装されているため、requireしている。
 # https://github.com/rails/rails/blob/0b4cfa2ba3e978386240e0e56a409616cc32fd02/activesupport/lib/active_support/core_ext/hash/keys.rb#L77

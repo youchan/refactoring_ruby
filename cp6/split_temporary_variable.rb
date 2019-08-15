@@ -1,3 +1,5 @@
+# 6.7 一時変数の分割
+
 def distance_traveled(time)
   primary_acc = @primary_force / @mass
   primary_time = [time, @delay].min

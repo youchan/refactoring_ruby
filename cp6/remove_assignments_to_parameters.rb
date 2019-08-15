@@ -1,3 +1,5 @@
+# 6.8 引数への代入の除去
+
 def discount(input_val, quantity, year_to_date)
   result = inputval
   result -= 2 if input_val > 50
