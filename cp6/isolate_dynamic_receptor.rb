@@ -21,3 +21,19 @@ class Recorder
     messages << %w[sym args] ; self
   end
 end
+
+class CommandCenter
+  def start(command_string)
+    ...
+    self
+  end
+  def stop(command_string)
+    ...
+    self
+  end
+end
+
+recorder = Recorder.new
+recorder.start("LRMMMMRL")
+recorder.stop("LRMMMMRL")
+recorder.play_for(CommandCenter.new)
