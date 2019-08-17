@@ -2,22 +2,24 @@
 
 class Person
   attr_reader :name
-  attr_accessor :office_area_code
-  attr_accessor :office_number
 
   def initialize
     @office_telephone = TelephoneNumber.new
   end
 
   def telephone_number
-    '(' + office_area_code + ') ' + @office_number
+    @office_telephone.telephone_number
   end
 
-  def office_area_code
-    @office_telephone.area_code
+  def office_telephone
+    @office_telephone
   end
 end
 
 class TelephoneNumber
   attr_accessor :area_code, :number
+
+  def telephone_number
+    '(' + area_code + ') ' + number
+  end
 end
