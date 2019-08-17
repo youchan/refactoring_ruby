@@ -1,13 +1,13 @@
 # 6.18 動的レセプタから動的メソッド定義へ（Replace Dynamic Receptor with Dynamic Method Definition）
 
 class Person
-  attr_accessor :name, :age
-
-  def method_missing(sym, *args, &block)
-    empty?(sym.to_s.sub(/^empty_/,"").chomp("?"))
+  def self.attrs_with_empty_predicate(*args)
+    attr_accessor *args
+    args.each do |attribute|
+      define_method "empty_#{attribute}?" do
+        self.send(attribute).nil?
+      end
+    end
   end
-
-  def empty?(sym)
-    self.send(sym).nil?
-  end
+  attrs_with_empty_predicate :name, :age
 end
