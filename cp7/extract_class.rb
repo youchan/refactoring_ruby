@@ -9,3 +9,6 @@ class Person
     '(' + @office_area_code + ') ' + @office_number
   end
 end
+
+class TelephoneNumber
+end
