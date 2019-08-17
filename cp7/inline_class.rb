@@ -39,4 +39,4 @@ class TelephoneNumber
 end
 
 martin = Person.new
-martin.office_telephone.area_code = "781"
+martin.area_code = "781"
