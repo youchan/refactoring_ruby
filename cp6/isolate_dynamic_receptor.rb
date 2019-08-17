@@ -5,16 +5,20 @@ class Recorder
     undef_method meth unless meth =~ /^(__|inspect)/
   end
 
-  def messages
-    @messages ||= []
+  def record
+    @message_collector ||= MessageCollector.new
   end
 
   def play_for(obj)
-    messages.inject(obj) { |result, message| result.send message.first, *message.last }
+    @message_collector.messages.inject(obj) do |result, message|
+      result.send message.first, *message.last
+    end
   end
 
   def to_s
-    messages.inject([]) { |result, message| result << "#{message.first}(args: #{message.last.inspect})"}.join('.')
+    @message_collector.messages.inject([]) do |result, message|
+      result << "#{message.first}(args: #{message.last.inspect})"
+    end.join(".")
   end
 
   def method_missing(sym, *args)
@@ -33,7 +37,22 @@ class CommandCenter
   end
 end
 
+class MessageCollector
+  instance_methods.each do |meth|
+    undef_method meth unless meth =~ /^(__|inspect)/
+  end
+
+  def messages
+    @messages ||= []
+  end
+
+  def method_missing(sym, *args)
+    messages << [sym, args]
+    self
+  end
+end
+
 recorder = Recorder.new
-recorder.start("LRMMMMRL")
-recorder.stop("LRMMMMRL")
+recorder.record.start("LRMMMMRL")
+recorder.record.stop("LRMMMMRL")
 recorder.play_for(CommandCenter.new)
