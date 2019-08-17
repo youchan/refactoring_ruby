@@ -1,7 +1,7 @@
 # 6.15 名前付き引数の除去（Remove Named Parameter）
 
 class Books
-  def self.find(hash={})
+  def self.find(selector, hash={})
     hash[:joins] ||= []
     hash[:conditions] ||= ""
     sql = ["SELECT * FROM books"]
@@ -10,16 +10,13 @@ class Books
       sql << "ON books.#{join_table.to_s.chop}_id = #{join_table}.id"
     end
     sql << "WHERE #{hash[:conditions]}" unless hash[:conditions].empty?
-    sql << "LIMIT 1" if hash[:selector] == :first
+    sql << "LIMIT 1" if selector == :first
     connection.find(sql.join(" "))
   end
 end
 
+Books.find(:all, :conditions => "authors.name = 'Jenny James'",
+           :joins =>[:authors])
 
-Books.find
-Books.find(:selector => :all,
-           :conditions => "authors.name = 'Jenny James'",
-           :joins => [:authors])
-Books.find(:selector => :first,
-           :conditions => "authors.name = 'JennyJames'",
-           :joins => [:authors])
+Books.find(:first, :conditions => "authors.name = 'Jenny James'",
+           :joins =>[:authors])
