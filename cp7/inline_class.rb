@@ -5,6 +5,22 @@ class Person
     @office_telephone = TelephoneNumber.new
   end
 
+  def area_code
+    @office_telephone.area_code
+  end
+
+  def area_code=(arg)
+    @office_telephone.area_code = arg
+  end
+
+  def number
+    @office_telephone.number
+  end
+
+  def number=(arg)
+    @office_telephone.number = arg
+  end
+
   def telephone_number
     @office_telephone.telephone_number
   end
@@ -21,3 +37,6 @@ class TelephoneNumber
     '(' + area_code + ') ' + number
   end
 end
+
+martin = Person.new
+martin.office_telephone.area_code = "781"
