@@ -1,6 +1,8 @@
 # 7.6 横流しブローカーの除去
 
 class Person
+  attr_reader :manager
+
   def initialize(department)
     @department = department
   end
