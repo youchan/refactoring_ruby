@@ -1,14 +1,10 @@
 # 7.6 横流しブローカーの除去
 
 class Person
-  attr_reader :manager
+  attr_reader :department
 
   def initialize(department)
     @department = department
-  end
-
-  def manager
-    @department.manager
   end
 end
 
@@ -21,5 +17,4 @@ class Department
 end
 
 ken = Person.new(Department.new("john"))
-manager = ken.manager
-p manager
+p ken.department.manager
