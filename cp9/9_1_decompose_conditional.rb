@@ -1,8 +1,7 @@
 # 9.1 条件文の分解（Decompose Conditional）
 
-if not_summer(date)
-  charge = winter_charge(quantity)
+if date < SUMMER_START || date > SUMMER_END
+  charge = quantity * @winter_rate + @winter_service_charge
 else
-  charge = summer_charge(quantity)
+  charge = quantity * @summer_rate
 end
-
