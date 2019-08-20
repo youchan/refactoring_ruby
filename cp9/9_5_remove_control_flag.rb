@@ -11,7 +11,7 @@ def found_miscreant(people)
     if found == ""
       if person == "Don"
         send_alert
-        found = "Don"
+        return "Don"
       end
       if person == "John"
         send_alert
