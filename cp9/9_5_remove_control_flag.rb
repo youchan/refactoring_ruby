@@ -6,11 +6,11 @@ def check_security(people)
     unless found
       if person == "Don"
         send_alert
-        found = true
+        break
       end
       if person == "John"
         send_alert
-        found = true
+        break
       end
     end
   end
