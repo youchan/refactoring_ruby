@@ -3,6 +3,14 @@ class Order
     @customer = Customer.new(value)
   end
 
+  def customer
+    @customer.name
+  end
+
+  def customer=(value)
+    @customer = Customer.new(value)
+  end
+
   private
 
   def self.number_of_orders_for(orders, customer)
