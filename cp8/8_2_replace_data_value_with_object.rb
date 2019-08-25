@@ -1,8 +1,6 @@
 class Order
-  attr_accessor :customer
-
   def initialize(customer)
-    @customer = customer
+    @customer = Customer.new(value)
   end
 
   private
