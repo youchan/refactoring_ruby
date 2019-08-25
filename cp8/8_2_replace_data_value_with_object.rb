@@ -11,3 +11,11 @@ class Order
     orders.select { |order| order.customer == customer }.size
   end
 end
+
+class Customer
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
