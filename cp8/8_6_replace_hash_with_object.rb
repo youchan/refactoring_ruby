@@ -4,3 +4,6 @@ new_network.nodes << node
 new_network.name = new_network.old_networks
                          .map(&:name)
                          .join(' - ')
+
+class NetworkResult
+end
