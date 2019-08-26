@@ -1,11 +1,12 @@
 row = Performance.new
-row[0] = "Liverpool"
-row[1] = "15"
+row.name = "Liverpool"
+row.wins = "15"
 name = row.name
 wins = row.wins
 
 class Performance
-  attr_reader :name
+  attr_accessor :name
+  attr_writer :wins
 
   def initialize
     @data = []
