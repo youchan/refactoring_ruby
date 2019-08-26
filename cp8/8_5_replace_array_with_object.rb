@@ -12,14 +12,6 @@ class Performance
     @data = []
   end
 
-  def []=(index, value)
-    @data.insert(index, value)
-  end
-
-  def [](index)
-    @data[index]
-  end
-
   def wins
     @wins.to_i
   end
