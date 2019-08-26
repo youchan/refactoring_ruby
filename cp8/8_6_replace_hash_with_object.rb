@@ -6,6 +6,7 @@ new_network.name = new_network.old_networks
                          .join(' - ')
 
 class NetworkResult
+  attr_reader :old_networks, :nodes
 
   def initialize
     @old_networks, @nodes = [], []
