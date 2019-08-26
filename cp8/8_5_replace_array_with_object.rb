@@ -2,7 +2,7 @@ row = Performance.new
 row[0] = "Liverpool"
 row[1] = "15"
 name = row.name
-wins = row[1].to_i
+wins = row.wins
 
 class Performance
   attr_reader :name
@@ -17,5 +17,9 @@ class Performance
 
   def [](index)
     @data[index]
+  end
+
+  def wins
+    @wins.to_i
   end
 end
