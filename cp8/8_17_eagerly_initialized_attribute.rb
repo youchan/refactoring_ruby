@@ -1,9 +1,8 @@
 class Employee
-  def emails
-    @emails ||= []
-  end
+  attr_reader :emails, :voice_mails
 
-  def voice_mails
-    @voice_mails ||= []
+  def initialize
+    @emails = []
+    @voice_mails = []
   end
 end
