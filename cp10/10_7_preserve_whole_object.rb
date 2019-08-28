@@ -5,7 +5,13 @@ class Room
 end
 
 class HeatingPlan
-  def within_range?(room_range)
-    (room_range.low >= @range.low) && (room_range.high <= @range.high)
+  def within_range?(room_temperature_range)
+    @range.includes?(room_temperature_range)
+  end
+end
+
+class TempRange
+  def includes?(temperature_range)
+    temperature_range.low >= @range.low && temperature_range.high <= @range.high
   end
 end
