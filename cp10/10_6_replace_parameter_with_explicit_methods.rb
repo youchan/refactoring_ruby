@@ -28,3 +28,5 @@ class Employee
     Manager.new
   end
 end
+
+kent = Employee.create(Employee::ENGINEER)
