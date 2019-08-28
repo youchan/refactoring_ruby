@@ -1,7 +1,5 @@
 class Room
   def within_plan?(plan)
-    low = days_temperature_range.low
-    high = days_temperature_range.high
     plan.within_range?(days_temperature_range)
   end
 end
