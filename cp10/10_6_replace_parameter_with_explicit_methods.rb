@@ -29,4 +29,4 @@ class Employee
   end
 end
 
-kent = Employee.create(Employee::ENGINEER)
+kent = Employee.create_engineer
