@@ -9,7 +9,7 @@ def found_miscreant(people)
       return found_person(people)
     end
   end
-  found_person(people)
+  nil
 end
 
 # 関数はこのようにして呼び出される
