@@ -2,14 +2,14 @@ def found_miscreant(people)
   people.each do |person|
     if person == "Don"
       send_alert
-      return "Don"
+      return found_person(people)
     end
     if person == "John"
       send_alert
-      return "John"
+      return found_person(people)
     end
   end
-  ""
+  found_person(people)
 end
 
 # 関数はこのようにして呼び出される
