@@ -1,15 +1,5 @@
 def send_alert_if_miscreant_in(people)
-  people.each do |person|
-    if person == "Don"
-      send_alert
-      return found_person(people)
-    end
-    if person == "John"
-      send_alert
-      return found_person(people)
-    end
-  end
-  nil
+  send_alert unless found_person(people).empty?
 end
 
 # 関数はこのようにして呼び出される
