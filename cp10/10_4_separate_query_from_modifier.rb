@@ -18,3 +18,11 @@ def check_security(people)
   found = found_miscreant(people)
   some_later_code(found)
 end
+
+def found_person(people)
+  people.each do |person|
+    return "Don" if person == "Don"
+    return "John" if person == "John"
+  end
+  ""
+end
