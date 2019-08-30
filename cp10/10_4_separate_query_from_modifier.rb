@@ -1,4 +1,4 @@
-def found_miscreant(people)
+def send_alert_if_miscreant_in(people)
   people.each do |person|
     if person == "Don"
       send_alert
@@ -15,7 +15,7 @@ end
 # 関数はこのようにして呼び出される
 
 def check_security(people)
-  found_miscreant(people)
+  send_alert_if_miscreant_in(people)
   found = found_person(people)
   some_later_code(found)
 end
