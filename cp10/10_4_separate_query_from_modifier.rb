@@ -15,7 +15,8 @@ end
 # 関数はこのようにして呼び出される
 
 def check_security(people)
-  found = found_miscreant(people)
+  found_miscreant(people)
+  found = found_person(people)
   some_later_code(found)
 end
 
