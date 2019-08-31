@@ -19,3 +19,5 @@ class Customer
     @name = name
   end
 end
+
+puts Order.new("ken")
