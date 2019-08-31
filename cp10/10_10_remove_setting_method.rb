@@ -1,5 +1,9 @@
 class Account
   def initialize(id)
-    @id = id
+    self.id = id
+  end
+
+  def id=(value)
+    @id = "ZZ#{value}"
   end
 end
