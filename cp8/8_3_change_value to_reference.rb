@@ -14,6 +14,7 @@ end
 
 class Customer
   attr_reader :name
+  Instances = {}
 
   def initialize(name)
     @name = name
@@ -21,6 +22,16 @@ class Customer
 
   def self.create(name)
     Customer.new(name)
+  end
+
+  def self.load_customers
+    new("Lemon Car Hire").store
+    new("Associated Coffee Machines").store
+    new("Bilston Gasworks").store
+  end
+
+  def store
+    Instances[name] = self
   end
 end
 
