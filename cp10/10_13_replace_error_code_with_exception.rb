@@ -3,3 +3,8 @@ if !account.can_withdraw?(amount)
 else
   account.withdraw(amount)
 end
+
+def withdraw(amount)
+  raise ArgumentError.new if amount > @balance
+  @balance -= amount
+end
