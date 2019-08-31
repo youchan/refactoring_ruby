@@ -1,8 +1,8 @@
 class Order
   attr_accessor :customer
 
-  def initialize(customer)
-    @customer = customer
+  def initialize(customer_name)
+    @customer = Customer.create(customer_name)
   end
 
   private
@@ -17,6 +17,10 @@ class Customer
 
   def initialize(name)
     @name = name
+  end
+
+  def self.create(name)
+    Customer.new(name)
   end
 end
 
