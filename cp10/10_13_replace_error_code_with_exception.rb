@@ -22,8 +22,9 @@ module Assertions
   end
 end
 
-if !account.can_withdraw?(amount)
-  handle_overdrawn
-else
+begin
   account.withdraw(amount)
+  do_the_usual_thing
+rescue BalanceError
+  handle_overdrawn
 end
