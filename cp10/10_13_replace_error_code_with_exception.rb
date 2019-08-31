@@ -11,6 +11,11 @@ class Account
     return 0
   end
 
+  def new_withdraw(amount)
+    raise BalanceError.new if amount > @balance
+    @balance -= amount
+  end
+
   def can_withdraw?(amount)
     true
   end
