@@ -1,5 +1,4 @@
 def withdraw(amount)
-  return -1 if amount > @balance
+  raise BalanceError.new if amount > @balance
   @balance -= amount
-  0
 end
