@@ -1,7 +1,10 @@
 class ProductController
   def create
-    @product = self.class.create_product(base_price, imported)
+    @product = Product.create(base_price, imported)
   end
+end
+
+class Product
 
   def self.create_product(base_price, imported)
     if imported
@@ -13,12 +16,6 @@ class ProductController
         Product.new(base_price)
       end
     end
-  end
-end
-
-class Product
-  def initialize(base_price)
-    @base_price = base_price
   end
 
   def total_price
