@@ -1,10 +1,10 @@
 def price
   base_price = @quantity * @item_price
   level_of_discount = discount_level
-  discounted_price(base_price, level_of_discount)
+  discounted_price(base_price)
 end
 
-def discounted_price(base_price, level_of_discount)
+def discounted_price(base_price)
   return base_price * 0.1 if discount_level == 2
   base_price * 0.05
 end
