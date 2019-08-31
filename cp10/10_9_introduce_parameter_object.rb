@@ -1,12 +1,12 @@
 class Account
-  def add_charge(charge=nil)
-    total = charge.base_price + charge.base_price * charge.tax_rate
-    total += charge.base_price * 0.1 if charge.imported
-    @charges << total
+  def add_charge(charge)
+    @charges << charge
   end
 
   def total_charge
-    @charges.inject(0) {|total, charge| total + charge}
+    @charges.inject(0) do |total_for_account, charge|
+      total_for_account + charge.total
+    end
   end
 end
 
@@ -17,6 +17,12 @@ class Charge
     @base_price = base_price
     @tax_rate = tax_rate
     @imported = imported
+  end
+
+  def total
+    result = @base_price + @base_price * @tax_rate
+    result += @base_price * 0.1 if @imported
+    result
   end
 end
 
