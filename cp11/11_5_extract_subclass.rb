@@ -34,3 +34,5 @@ class LaborItem < JobItem
     super
   end
 end
+
+j1 = JobItem.new(0, 5, true, kent)
