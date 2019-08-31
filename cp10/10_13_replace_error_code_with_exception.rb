@@ -2,7 +2,7 @@ class Account
   include Assertions
 
   def withdraw(amount)
-    assert("amonunt too large") { amount > @balance }
+    raise BalanceError.new if amount > @balance
     @balance -= amount
   end
 
