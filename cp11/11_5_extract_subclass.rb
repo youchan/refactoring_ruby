@@ -30,8 +30,8 @@ class Employee
 end
 
 class LaborItem < JobItem
-  def initialize(unit_price, quantity)
-    super
+  def initialize(quantity, employee)
+    super(0, quantity, true, employee)
   end
 end
 
