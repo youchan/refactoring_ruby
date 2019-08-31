@@ -1,7 +1,7 @@
 class JobItem
   attr_reader :quantity, :employee
 
-  def initialize(unit_price, quantity, is_labor, employee)
+  def initialize(unit_price, quantity, is_labor=false, employee=nil)
     @unit_price = unit_price
     @quantity = quantity
     @is_labor = is_labor
@@ -30,9 +30,9 @@ class Employee
 end
 
 class LaborItem < JobItem
-  def initialize(unit_price, quantity, is_labor, employee)
+  def initialize(unit_price, quantity)
     super
   end
 end
 
-j1 = LaborItem.new(0, 5, true, kent)
+j1 = LaborItem.new(0, 5)
