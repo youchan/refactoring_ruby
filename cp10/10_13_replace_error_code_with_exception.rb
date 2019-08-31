@@ -1,5 +1,5 @@
-if account.withdraw(amount) == -1
+if !account.can_withdraw?(amount)
   handle_overdrawn
 else
-  do_the_usual_thing
+  account.withdraw(amount)
 end
