@@ -28,3 +28,6 @@ class Employee
     @rate = rate
   end
 end
+
+class LaborItem < JobItem
+end
