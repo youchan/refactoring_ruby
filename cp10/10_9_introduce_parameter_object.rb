@@ -1,7 +1,7 @@
 class Account
-  def add_charge(base_price, tax_rate, imported, charge=nil)
-    total = base_price + base_price * tax_rate
-    total += base_price * 0.1 if imported
+  def add_charge(tax_rate, imported, charge=nil)
+    total = charge.base_price + charge.base_price * tax_rate
+    total += charge.base_price * 0.1 if imported
     @charges << total
   end
 
@@ -20,6 +20,6 @@ class Charge
   end
 end
 
-account.add_charge(5, 0.1, true)
-account.add_charge(12, 0.125, false)
+account.add_charge(5, 0.1, true, Charge.new(9.0, nil, nil))
+account.add_charge(12, 0.125, false, Charge.new(12.0, nil, nil))
 total = account.total_charge
