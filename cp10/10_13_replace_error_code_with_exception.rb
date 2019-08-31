@@ -6,9 +6,12 @@ end
 
 class Account
   def withdraw(amount)
-    return -1 if amount > @balance
-    @balance -= amount
-    return 0
+    begin
+      new_withdraw(amount)
+      return 0
+    rescue BalanceExeption
+      return -1
+    end
   end
 
   def new_withdraw(amount)
