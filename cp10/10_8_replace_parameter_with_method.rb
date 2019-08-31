@@ -5,7 +5,7 @@ def price
 end
 
 def discounted_price(base_price, level_of_discount)
-  return base_price * 0.1 if level_of_discount == 2
+  return base_price * 0.1 if discount_level == 2
   base_price * 0.05
 end
 
