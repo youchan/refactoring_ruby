@@ -2,7 +2,7 @@ class Order
   attr_accessor :customer
 
   def initialize(customer_name)
-    @customer = Customer.create(customer_name)
+    @customer = Customer.with_name(customer_name)
   end
 
   private
@@ -20,8 +20,8 @@ class Customer
     @name = name
   end
 
-  def self.create(name)
-    Customer.new(name)
+  def self.with_name(name)
+    Instances[name]
   end
 
   def self.load_customers
