@@ -1,4 +1,4 @@
 def execute(command)
-  command.prepare rescue nil
+  command.prepare if command.respond_to? :prepare
   command.execute
 end
