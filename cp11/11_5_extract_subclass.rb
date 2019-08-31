@@ -35,4 +35,4 @@ class LaborItem < JobItem
   end
 end
 
-j1 = JobItem.new(0, 5, true, kent)
+j1 = LaborItem.new(0, 5, true, kent)
