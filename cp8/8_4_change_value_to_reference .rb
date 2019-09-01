@@ -18,4 +18,5 @@ class Currency
   end
 end
 
-usd = Currency.get("USD")
+p Currency.send(:new, "USD") == Currency.new("USD") # returns true
+p Currency.send(:new, "USD").eql?(Currency.new("USD")) # returns true
