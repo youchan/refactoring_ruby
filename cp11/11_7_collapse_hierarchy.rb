@@ -19,3 +19,7 @@ def html_statement
   result << "<P>You owe <EM>#{total_charge}</EM></P>\n"
   result << "On this rental you earned <EM>#{total_frequent_renter_points}</\EM> frequent renter points</P>"
 end
+
+class Statement; end
+class TextStatement < Statement; end
+class HtmlStatement < Statement; end
