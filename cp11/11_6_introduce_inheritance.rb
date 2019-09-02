@@ -11,7 +11,7 @@ class MountainBike
   end
 end
 
-class FrontSuspensionMountainBike
+class FrontSuspensionMountainBike < MountainBike
   TIRE_WIDTH_FACTOR = 6
   FRONT_SUSPENSION_FACTOR = 8
   attr_accessor :tire_diameter, :front_fork_travel
