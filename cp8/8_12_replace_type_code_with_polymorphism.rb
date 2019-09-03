@@ -27,6 +27,16 @@ class MountainBike
   end
 end
 
+class RigidMountainBike
+  include MountainBike
+end
+class FrontSuspensionMountainBike
+  include MountainBike
+end
+class FullSuspensionMountainBike
+  include MountainBike
+end
+
 
 bike = MountainBike.new(:type_code => :rigid, :tire_width => 2.5)
 bike2 = MountainBike.new(:type_code => :front_suspension, :tire_width => 2,
