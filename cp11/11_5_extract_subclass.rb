@@ -1,11 +1,8 @@
 class JobItem
-  attr_reader :quantity, :employee
+  attr_reader :quantity
 
-  def initialize(unit_price, quantity, is_labor=false, employee=nil)
-    @unit_price = unit_price
-    @quantity = quantity
-    @is_labor = is_labor
-    @employee = employee
+  def initialize(unit_price, quantity, is_labor=false)
+    @unit_price, @quantity, @is_labor = unit_price, quantity, is_labor
   end
 
   def total_price
@@ -30,8 +27,11 @@ class Employee
 end
 
 class LaborItem < JobItem
+  attr_reader :employee
+
   def initialize(quantity, employee)
     super(0, quantity, true, employee)
+    @employee = employee
   end
 end
 
