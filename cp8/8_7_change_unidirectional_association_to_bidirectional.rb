@@ -16,4 +16,8 @@ class Customer
     #should only be used by Order when modifying the association
     @orders
   end
+
+  def add_order(order)
+    order.customer = self
+  end
 end
