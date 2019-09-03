@@ -1,5 +1,12 @@
 class Order
-  attr_accessor :customer
+  # attr_accessor :customer
+  attr_reader :customer
+
+  def customer=(value)
+    customer.friend_orders.subtract(self) unless customer.nil?
+    @customer = value
+    customer.friend_orders.add(self) unless customer.nil?
+  end
 end
 
 require 'set'
