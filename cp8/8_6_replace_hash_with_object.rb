@@ -1,8 +1,3 @@
-new_network = NetworkResult.new
-new_network.old_networks << node.network
-new_network.nodes << node
-new_network.name
-
 class NetworkResult
   attr_reader :old_networks, :nodes
 
@@ -14,3 +9,8 @@ class NetworkResult
     @old_networks.map(&:name).join(' - ')
   end
 end
+
+new_network = NetworkResult.new
+new_network.old_networks << node.network
+new_network.nodes << node
+p new_network.name
