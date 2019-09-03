@@ -1,5 +1,9 @@
 module MountainBike
 
+  def initialize(params)
+    params.each {|key, value| instance_variable_set "@#{key}", value}
+  end
+
   def wheel_circumference
     Math::PI * (@wheel_diameter + @tire_diameter)
   end
@@ -43,7 +47,4 @@ class FullSuspensionMountainBike
 end
 
 
-bike = RigidMountainBike.new(type_code: :rigid, tire_width: 2.5)
-bike = FrontSuspensionMountainBike.new(type_code: :front_suspension,
-                                       tire_width: 2,
-                                       front_fork_travel: 3)
+bike = FrontSuspensionMountainBike.new(tire_width: 2, front_fork_travel: 3)
